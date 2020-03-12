@@ -73,5 +73,18 @@ TEMPLATES = [
         },
     },
 ]
+---
 
+numpy + matplotlibの環境構築
+
+pip install --upgrade pip
+pip install numpy
+pip install matplotlib
+
+find / -name matplotlibrcを実行
+>/usr/local/lib/python3.8/site-packages/matplotlib/mpl-data/matplotlibrc
+
+backend : TKAgg　→　backend : Agg
+
+sed -i -e "s/backend : TKAgg/backend : Agg/" file
 ```
