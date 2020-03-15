@@ -25,9 +25,7 @@
 ## 環境構築のやり方
 
 ```
-1. docker-compose run --rm web django-admin startproject config(プロジェクト名) .
-
-config は任意に決めれるプロジェクト
+1. docker-compose run --rm web django-admin startproject (プロジェクト名) .
 
 2. config/settings.py
 
@@ -49,7 +47,7 @@ DATABASES = {
 
 ---
 
-4. docker-compose run --rm web　python manage.py startapp polls(アプリ名)
+4. docker-compose run --rm web　python manage.py startapp (アプリ名)
 
 5. INSTALLED_APPSにアプリ名を追加、'bootstrap4'も追加しておく
 
