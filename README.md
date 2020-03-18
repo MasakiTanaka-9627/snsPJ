@@ -72,7 +72,6 @@ TEMPLATES = [
     },
 ]
 ---
-
 numpy + matplotlibの環境構築
 
 pip install --upgrade pip
@@ -85,4 +84,16 @@ find / -name matplotlibrcを実行
 backend : TKAgg　→　backend : Agg
 
 sed -i -e "s/backend : TKAgg/backend : Agg/" file
+---
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"),]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+LOGIN_URL = 'login'
+AUTH_USER_MODEL = 'account.User'
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 ```
