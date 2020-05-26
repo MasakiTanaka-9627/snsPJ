@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block customcss %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock customcss %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div>
+                <h1>Chat Room</h1>
+                <p style="color: #7f7f7f;">Chat Roomは、自由にチャットができるサイトです。</p>
+                <div>
+                    <h2>今日のコラム</h2>
+                    <div class="box2 my-3">
+                        <h3 class="mt-2">タイトル</h3>
+                        <p>テキストが入る。</p>
+                        <div class="col-lg-10 offset-lg-1">
+                            <div class="mx-lg-5 my-lg-3">
+                                <a class="btn btn-info btn-block" href="">コラム記事へ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock content %}
