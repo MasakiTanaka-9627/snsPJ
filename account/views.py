@@ -11,6 +11,18 @@ from django.utils import timezone
 from django.http import HttpResponse
 from django.views import generic
 from django.contrib.auth.decorators import login_required
+from .forms import UserForm
+
 
 def signupfunc(request):
-    return render(request, 'signup.html')
+    params = {'message': '', 'form': None}
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        params['form'] = form
+        if form.is_valid():
+            params['message'] = 'OK'
+        else:
+            params['message'] = 'まだ登録できません'
+    else:
+        params['form'] = UserForm()
+    return render(request, 'signup.html', params)
